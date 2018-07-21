@@ -10,7 +10,7 @@ const theme = createMuiTheme({
     },
     palette: {
         secondary: {
-            main: '#727a90',
+            main: 'rgba(114, 122, 144, 0.8)',
         }
     },
     typography: {

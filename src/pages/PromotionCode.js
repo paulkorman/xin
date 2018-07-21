@@ -1,4 +1,3 @@
-/* eslint-disable flowtype/require-valid-file-annotation */
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
@@ -21,10 +20,6 @@ import ProdPhoto from '../img/woman.jpg';
 
 class PromotionCode extends Component {
 
-    state = {
-        open: false,
-    };
-
     componentDidMount() {
         loadCSS(
             'https://use.fontawesome.com/releases/v5.1.0/css/all.css',
@@ -34,9 +29,10 @@ class PromotionCode extends Component {
 
     render() {
         return (
-            <div >
+            <div className={this.props.classes.wrapContent}>
                 <MyAppBar
                     title="Order process"
+                    linkclose="/"
                 />
                 <div className={this.props.classes.myCard}>
                     <img src={ProdPhoto} alt="back and neck massager"/>
@@ -73,7 +69,6 @@ class PromotionCode extends Component {
                                         underline: this.props.classes.cssUnderline,
                                         input: this.props.classes.cssInput
                                     }}
-                                    id="custom-css-input"
                                 />
                             </FormControl>
                         </Grid>
@@ -87,7 +82,7 @@ class PromotionCode extends Component {
                 <MyCardGroupStyle title="Secure Payments">
                     <Grid container spacing={24} style={{alignItems: 'center'}} className={this.props.classes.marginBottom} >
                         <Grid item xs={6} >
-                            <a href="" className={this.props.classes.linkButton}>
+                            <a href="/#/credit-card-payment" className={this.props.classes.linkButton}>
                                 <Icon className={classNames(this.props.classes.iconFA, 'fa fa-credit-card')} style={{ fontSize: '1.875rem', width: 50 }}/>
                                 <Typography className={this.props.classes.linkButtonCaption}>Credit Card</Typography>
                             </a>

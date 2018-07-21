@@ -1,6 +1,16 @@
 //const bodyW = 414;
 //let windowH = window.innerHeight;
 let windowW = window.innerWidth;
+let k = 1;
+if(windowW <= 414 && windowW > 320){
+    k = windowW/320;
+}
+if(windowW > 414){
+    k = 414/320;
+}
+if(windowW <= 320){
+    k=1;
+}
 
 const styles = theme => ({
     root: {
@@ -18,7 +28,7 @@ const styles = theme => ({
         textAlign: 'center',
         color: '#000000',
         opacity: '0.5',
-        fontSize: '0.875rem',
+        fontSize: k*0.875 + 'rem',
         fontWeight: 500
     },
     rightCol: {

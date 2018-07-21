@@ -5,11 +5,31 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import MenuIcon from '@material-ui/icons/Menu';
+import CloseIcon from '@material-ui/icons/Close';
 import Grid from '@material-ui/core/Grid';
+import Button from '@material-ui/core/Button';
 
 import styles from '../theme/components/MyAppBar';
 
+function ShowBack(link) {
+    if(link!==''){
+        return (
+            <Button href={link} style={{padding: 0, minWidth: 'auto', minHeight: 'auto'}}>
+                <ChevronLeftIcon />
+            </Button>
+        );
+    }
+}
+
+function ShowClose(link) {
+    if(link!==''){
+        return (
+            <Button href={link} style={{padding: 0, minWidth: 'auto', minHeight: 'auto'}}>
+                <CloseIcon />
+            </Button>
+        );
+    }
+}
 
 class MyAppBar extends React.Component {
 
@@ -19,12 +39,12 @@ class MyAppBar extends React.Component {
             open: typeof props.open !== 'undefined' ? props.open : 'false',
             classes: typeof props.classes !== 'undefined' ? props.classes : '',
             title: typeof props.title !== 'undefined' ? props.title : '',
+            linkback: typeof props.linkback !== 'undefined' ? props.linkback : '',
+            linkclose: typeof props.linkclose !== 'undefined' ? props.linkclose : '',
         };
     }
 
-    openMenu(){
-        document.getElementById('menu').classList.add('myMenuOpen');
-    }
+
 
     render(){
         return (
@@ -33,7 +53,7 @@ class MyAppBar extends React.Component {
                     <Toolbar>
                         <Grid container spacing={0}  >
                             <Grid item xs={4} className={this.props.classes.leftCol}>
-                                <ChevronLeftIcon />
+                                {ShowBack(this.state.linkback)}
                             </Grid>
                             <Grid item xs={4}>
                                 <Typography className={this.props.classes.title}>
@@ -41,7 +61,7 @@ class MyAppBar extends React.Component {
                                 </Typography>
                             </Grid>
                             <Grid item xs={4} className={this.props.classes.rightCol}>
-                                <MenuIcon className={this.props.classes.icon} />
+                                {ShowClose(this.state.linkclose)}
                             </Grid>
                         </Grid>
                     </Toolbar>

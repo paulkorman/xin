@@ -1,36 +1,51 @@
+let windowW = window.innerWidth;
+let k = 1;
+if(windowW <= 414 && windowW > 320){
+    k = windowW/320;
+}
+if(windowW > 414){
+    k = 414/320;
+}
+if(windowW <= 320){
+    k=1;
+}
+
 const styles = theme => ({
+    wrapContent: {
+        paddingBottom: k*theme.spacing.unit*2
+    },
     myCard: {
         position: 'relative',
         overflow: 'hidden',
-        paddingTop: 56 + theme.spacing.unit*2,
-        paddingLeft: theme.spacing.unit*2,
-        paddingRight: theme.spacing.unit*2,
+        paddingTop: 56 + k*theme.spacing.unit*2,
+        paddingLeft: k*theme.spacing.unit*2,
+        paddingRight: k*theme.spacing.unit*2,
         '& img': {
             width: '100%',
         },
         '& > div': {
             position: 'absolute',
-            bottom: theme.spacing.unit/2,
-            left: theme.spacing.unit*2,
-            right: theme.spacing.unit*2,
+            bottom: k*theme.spacing.unit/2,
+            left: k*theme.spacing.unit*2,
+            right: k*theme.spacing.unit*2,
             color: '#fff',
             backgroundColor: 'rgba(173, 173, 114, 0.8)',
-            paddingLeft: theme.spacing.unit*3,
-            paddingRight: theme.spacing.unit*3,
-            paddingTop: theme.spacing.unit,
-            paddingBottom: theme.spacing.unit,
+            paddingLeft: k*theme.spacing.unit*3,
+            paddingRight: k*theme.spacing.unit*3,
+            paddingTop: k*theme.spacing.unit,
+            paddingBottom: k*theme.spacing.unit,
         },
 
     },
     myCardFooter: {
-        marginTop: -theme.spacing.unit/2,
-        marginBottom: theme.spacing.unit*3,
-        marginLeft: theme.spacing.unit*2,
-        marginRight: theme.spacing.unit*2,
-        paddingTop: theme.spacing.unit*4,
-        paddingBottom: theme.spacing.unit*4,
-        paddingLeft: theme.spacing.unit*3,
-        paddingRight: theme.spacing.unit*3,
+        marginTop: -k*theme.spacing.unit/2,
+        marginBottom: k*theme.spacing.unit*3,
+        marginLeft: k*theme.spacing.unit*2,
+        marginRight: k*theme.spacing.unit*2,
+        paddingTop: k*theme.spacing.unit*4,
+        paddingBottom: k*theme.spacing.unit*4,
+        paddingLeft: k*theme.spacing.unit*3,
+        paddingRight: k*theme.spacing.unit*3,
         border: '1px solid #e4e4e4',
         borderTop: 'none',
         borderRadius: '0 0 4px 4px',
@@ -38,32 +53,28 @@ const styles = theme => ({
     },
     caption: {
         color: '#939393',
-        fontSize: '0.75rem',
+        fontSize: k*0.75 + 'rem',
         fontWeight: 500,
     },
     value: {
         color: 'rgba(44, 18, 57, 0.84)',
         textAlign: 'right',
-        fontSize: '1rem',
+        fontSize: k*1 + 'rem',
         fontWeight: 700
     },
-    cssLabel: {
-        '&$cssFocused': {
-            color: '#939393',
-        },
-    },
-    cssFocused: {},
     cssUnderline: {
         '&:after': {
             borderBottomColor: '#846f8f',
         },
     },
     cssInput: {
-        fontSize: '0.85rem',
+        fontSize: k*0.85 + 'rem',
         fontWeight: 500,
+        paddingLeft: k*theme.spacing.unit*2,
+        paddingRight: k*theme.spacing.unit*2,
     },
     marginBottom: {
-        marginBottom: 10
+        marginBottom: k*10
     },
     myBtn: {
         textTransform: 'none'
@@ -75,14 +86,13 @@ const styles = theme => ({
         color: '#fff',
         borderRadius: 6,
         backgroundColor: 'rgba(136, 118, 80, 0.76)',
-        paddingTop: theme.spacing.unit*2,
-        paddingBottom: theme.spacing.unit*2,
+        paddingTop: k*theme.spacing.unit*2,
+        paddingBottom: k*theme.spacing.unit*2,
     },
     linkButtonCaption: {
-        fontSize: '0.6875rem',
+        fontSize: k*0.6875 + 'rem',
         color: '#fff'
-    }
-
+    },
 });
 
 export default styles;
