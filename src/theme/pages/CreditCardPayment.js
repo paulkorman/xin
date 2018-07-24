@@ -15,8 +15,8 @@ if(windowW <= 320){
 const styles = theme => ({
     myPaper: {
         paddingTop: k*(56+theme.spacing.unit*2),
-        paddingLeft: k*theme.spacing.unit*2,
-        paddingRight: k*theme.spacing.unit*2,
+        paddingLeft: k*theme.spacing.unit*3,
+        paddingRight: k*theme.spacing.unit*3,
         height: '100vh',
         backgroundColor: '#fcfcfc'
     },
@@ -57,13 +57,14 @@ const styles = theme => ({
         textDecoration: 'none',
         textAlign: 'center',
         color: '#fff',
-        borderRadius: 6,
+        borderRadius:3,
         backgroundColor: 'rgba(136, 118, 80, 0.76)',
-        paddingTop: k * theme.spacing.unit*2,
-        paddingBottom: k * theme.spacing.unit*2,
+        paddingTop: '3.5px',
+        paddingBottom: '3.5px',
     },
     linkButtonCaption: {
-        fontSize: 0.875*k + 'rem',
+        fontSize: 0.75 + 'rem',
+        fontWeight: 'bold',
         color: 'inherit',
         fontWeight: 500,
     },

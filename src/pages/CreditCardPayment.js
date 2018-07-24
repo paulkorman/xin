@@ -16,6 +16,7 @@ import { withStyles } from '@material-ui/core/styles';
 import withRoot from '../components/withRoot';
 import MyAppBar from '../components/MyAppBar';
 import NumberFormat from 'react-number-format';
+import PayPal from '../components/paypal';
 
 import styles from '../theme/pages/CreditCardPayment';
 
@@ -105,18 +106,17 @@ class CreditCardPayment extends Component {
                 />
 
                 <Paper className={this.props.classes.myPaper} elevation={0}>
-                    <Grid container spacing={24} style={{alignItems: 'center', marginBottom: 40}} >
-                        <Grid item xs={6} >
+                    <Grid container spacing={10} style={{alignItems: 'center', marginBottom: 40}} >
+                        <Grid item xs={5} >
                             <div href="" className={this.props.classes.linkButtonActive}>
-                                <Icon className={classNames(this.props.classes.iconFA, 'fa fa-credit-card')} style={{ fontSize: '1.875rem', width: 50 }}/>
-                                <Typography className={this.props.classes.linkButtonCaption}>Credit Card</Typography>
+                                <Typography className={this.props.classes.linkButtonCaption}><Icon className={classNames(this.props.classes.iconFA, 'fa fa-credit-card')} style={{ fontSize: '0.875rem', width: 30, verticalAlign: 'middle' }}/>Credit Card</Typography>
                             </div>
                         </Grid>
-                        <Grid item xs={6}>
-                            <a href="" className={this.props.classes.linkButton}>
-                                <Icon className={classNames(this.props.classes.iconFA, 'fab fa-paypal')} style={{ fontSize: '1.875rem', width: 50 }}/>
-                                <Typography className={this.props.classes.linkButtonCaption}>Pay Pal</Typography>
-                            </a>
+                        <Grid item xs={2} style={{textAlign: 'center'}}>
+                            <Typography className={this.props.classes.caption}>or</Typography>
+                        </Grid>
+                        <Grid item xs={5}>
+                            <PayPal></PayPal>
                         </Grid>
                     </Grid>
                     <Grid container spacing={24} style={{alignItems: 'center'}} className={this.props.classes.marginBottom} >
