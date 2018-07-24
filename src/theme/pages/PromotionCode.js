@@ -84,14 +84,16 @@ const styles = theme => ({
         textDecoration: 'none',
         textAlign: 'center',
         color: '#fff',
-        borderRadius: 6,
+        borderRadius:3,
         backgroundColor: 'rgba(136, 118, 80, 0.76)',
-        paddingTop: k*theme.spacing.unit*2,
-        paddingBottom: k*theme.spacing.unit*2,
+        paddingTop: '3.5px',
+        paddingBottom: '3.5px',
     },
     linkButtonCaption: {
-        fontSize: k*0.6875 + 'rem',
-        color: '#fff'
+        fontSize: 0.75 + 'rem',
+        fontWeight: 'bold',
+        color: '#fff',
+        verticalAlign: 'middle'
     },
 });
 

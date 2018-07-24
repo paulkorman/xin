@@ -25,8 +25,8 @@ const styles = theme => ({
         boxShadow: '0px 3px 5.88px 0.12px rgba(156, 156, 156, 0.18)',
     },
     cssTitleCard: {
-        marginTop: '-36px',
-        marginBottom: theme.spacing.unit*2,
+        marginTop:  -k*0.75-k*1.3 + 'rem',
+        marginBottom: theme.spacing.unit*5,
         '& b': {
             backgroundColor: '#fff',
             fontSize: k*0.75 + 'rem',

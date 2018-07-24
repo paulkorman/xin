@@ -14,9 +14,9 @@ if(windowW <= 320){
 
 const styles = theme => ({
     myPaper: {
-        paddingTop: 56+theme.spacing.unit*2,
-        paddingLeft: theme.spacing.unit*2,
-        paddingRight: theme.spacing.unit*2,
+        paddingTop: k*(56+theme.spacing.unit*2),
+        paddingLeft: k*theme.spacing.unit*2,
+        paddingRight: k*theme.spacing.unit*2,
         height: '100vh',
         backgroundColor: '#fcfcfc'
     },

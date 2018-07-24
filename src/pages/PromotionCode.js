@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Typography from '@material-ui/core/Typography';
@@ -13,6 +12,7 @@ import { withStyles } from '@material-ui/core/styles';
 import withRoot from '../components/withRoot';
 import MyAppBar from '../components/MyAppBar';
 import MyCardGroupStyle from '../components/MyCardGroupStyle';
+import PayPal from '../components/paypal';
 
 import styles from '../theme/pages/PromotionCode';
 
@@ -60,7 +60,7 @@ class PromotionCode extends Component {
                     </Grid>
                     <Grid container spacing={0} style={{alignItems: 'flex-end'}}>
                         <Grid item xs={6}  >
-                            <FormControl style={{width: '8rem'}}>
+                            <FormControl style={{width: '12rem'}}>
                                 <Typography className={this.props.classes.caption}>
                                     Enter Promotion Code
                                 </Typography>
@@ -83,15 +83,11 @@ class PromotionCode extends Component {
                     <Grid container spacing={24} style={{alignItems: 'center'}} className={this.props.classes.marginBottom} >
                         <Grid item xs={6} >
                             <a href="/#/credit-card-payment" className={this.props.classes.linkButton}>
-                                <Icon className={classNames(this.props.classes.iconFA, 'fa fa-credit-card')} style={{ fontSize: '1.875rem', width: 50 }}/>
-                                <Typography className={this.props.classes.linkButtonCaption}>Credit Card</Typography>
+                                <Typography className={this.props.classes.linkButtonCaption}><Icon className={classNames(this.props.classes.iconFA, 'fa fa-credit-card')} style={{ fontSize: '0.875rem', width: 30, verticalAlign: 'middle' }}/>Credit Card</Typography>
                             </a>
                         </Grid>
                         <Grid item xs={6}>
-                            <a href="" className={this.props.classes.linkButton}>
-                                <Icon className={classNames(this.props.classes.iconFA, 'fab fa-paypal')} style={{ fontSize: '1.875rem', width: 50 }}/>
-                                <Typography className={this.props.classes.linkButtonCaption}>Pay Pal</Typography>
-                            </a>
+                            <PayPal></PayPal>
                         </Grid>
                     </Grid>
                     <Grid container spacing={0} style={{alignItems: 'center'}} >
